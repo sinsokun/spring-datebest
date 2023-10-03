@@ -1,5 +1,6 @@
 package co.istad.sb4webmvc.Contorller;
 
+import co.istad.sb4webmvc.Dto.CreateProductDto;
 import co.istad.sb4webmvc.Model.Product;
 import co.istad.sb4webmvc.Service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -20,41 +21,38 @@ public class ProductController {
         return productService.loadProducts();
     }
 
-    @GetMapping("/{id}")
-    public Product getProduct(@PathVariable Integer id){
-        return productService.loadProductById(id);
-    }
+//    @GetMapping("/{id}")
+//    public Product getProduct(@PathVariable Integer proid){
+//        return productService.loadProductById(proid);
+//    }
+//
+//    @PostMapping
+//    public void createNewProduct(@RequestBody CreateProductDto createProductDto){
+//        System.out.println(createProductDto.supplierId());
+//        System.out.println(createProductDto.supplierId());
+//        productService.createNewProduct(createProductDto);
+//    }
 
-
-    @PostMapping
-    public void createNewProduct( @RequestBody Product product){
-
-       productService.createNewProduct(product);
-    }
-
-    @ResponseStatus(HttpStatus.CREATED)
-    @PutMapping("/{id}")
-    public void UpdateProduct(Integer id, @PathVariable Product product){
-        productService.updateProductById(id, product);
-
-
-    }
-    @DeleteMapping("/{id}")
-    public void deleteprodcut(@PathVariable Integer id){
-        productService.deleteProductById(id);
-    }
-
-    @PatchMapping
-    public String updateProduct(){
-        return " update Product Partially";
-    }
-    @DeleteMapping
-    public String dateProduct(){
-        return "Delete Product";
-    }
-
-
-
+//    @ResponseStatus(HttpStatus.CREATED)
+//    @PutMapping("/{id}")
+//    public void UpdateProduct(Integer id, @PathVariable Product products){
+//        productService.updateProductById(id, products);
+//
+//
+//    }
+//    @DeleteMapping("/{id}")
+//    public void deleteproduct(@PathVariable Integer id){
+//        productService.deleteProductById(id);
+//    }
+//
+//    @PatchMapping
+//    public String updateProduct(){
+//        return " update Product Partially";
+//    }
+//    @DeleteMapping
+//    public String dateProduct(){
+//        return "Delete Product";
+//    }
 
 
 }

@@ -29,7 +29,7 @@ public interface CategoryRepository {
     Optional<Category> selectById(@Param("id") Integer id);
 
     @Insert("""
-            INSERT INTO categories(name ,descrption)
+            INSERT INTO categories(name ,description)
             VALUES (#{c.name}, #{c.descrption})
             
             """)
